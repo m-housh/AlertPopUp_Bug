@@ -14,6 +14,10 @@
 		4CB7C3DE2A23AACF00F0272B /* AlertPopUp_BugTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB7C3DD2A23AACF00F0272B /* AlertPopUp_BugTests.swift */; };
 		4CB7C3E82A23AACF00F0272B /* AlertPopUp_BugUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB7C3E72A23AACF00F0272B /* AlertPopUp_BugUITests.swift */; };
 		4CB7C3EA2A23AACF00F0272B /* AlertPopUp_BugUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB7C3E92A23AACF00F0272B /* AlertPopUp_BugUITestsLaunchTests.swift */; };
+		4CB7C3F82A23AB1300F0272B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 4CB7C3F72A23AB1300F0272B /* ComposableArchitecture */; };
+		4CB7C3FA2A23AB3B00F0272B /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB7C3F92A23AB3B00F0272B /* TodoModel.swift */; };
+		4CB7C3FC2A23AB8200F0272B /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB7C3FB2A23AB8200F0272B /* TodoListView.swift */; };
+		4CB7C3FE2A23AC0600F0272B /* TodoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB7C3FD2A23AC0600F0272B /* TodoRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,9 @@
 		4CB7C3E32A23AACF00F0272B /* AlertPopUp_BugUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlertPopUp_BugUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB7C3E72A23AACF00F0272B /* AlertPopUp_BugUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPopUp_BugUITests.swift; sourceTree = "<group>"; };
 		4CB7C3E92A23AACF00F0272B /* AlertPopUp_BugUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPopUp_BugUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4CB7C3F92A23AB3B00F0272B /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
+		4CB7C3FB2A23AB8200F0272B /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
+		4CB7C3FD2A23AC0600F0272B /* TodoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CB7C3F82A23AB1300F0272B /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +102,9 @@
 		4CB7C3CB2A23AACD00F0272B /* AlertPopUp_Bug */ = {
 			isa = PBXGroup;
 			children = (
+				4CB7C3FD2A23AC0600F0272B /* TodoRowView.swift */,
+				4CB7C3FB2A23AB8200F0272B /* TodoListView.swift */,
+				4CB7C3F92A23AB3B00F0272B /* TodoModel.swift */,
 				4CB7C3CC2A23AACD00F0272B /* AlertPopUp_BugApp.swift */,
 				4CB7C3CE2A23AACD00F0272B /* ContentView.swift */,
 				4CB7C3D02A23AACF00F0272B /* Assets.xcassets */,
@@ -143,6 +154,9 @@
 			dependencies = (
 			);
 			name = AlertPopUp_Bug;
+			packageProductDependencies = (
+				4CB7C3F72A23AB1300F0272B /* ComposableArchitecture */,
+			);
 			productName = AlertPopUp_Bug;
 			productReference = 4CB7C3C92A23AACD00F0272B /* AlertPopUp_Bug.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +229,9 @@
 				Base,
 			);
 			mainGroup = 4CB7C3C02A23AACD00F0272B;
+			packageReferences = (
+				4CB7C3F62A23AB1300F0272B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 4CB7C3CA2A23AACD00F0272B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,7 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CB7C3FA2A23AB3B00F0272B /* TodoModel.swift in Sources */,
 				4CB7C3CF2A23AACD00F0272B /* ContentView.swift in Sources */,
+				4CB7C3FE2A23AC0600F0272B /* TodoRowView.swift in Sources */,
+				4CB7C3FC2A23AB8200F0272B /* TodoListView.swift in Sources */,
 				4CB7C3CD2A23AACD00F0272B /* AlertPopUp_BugApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,6 +603,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4CB7C3F62A23AB1300F0272B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				branch = prerelease/1.0;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4CB7C3F72A23AB1300F0272B /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4CB7C3F62A23AB1300F0272B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4CB7C3C12A23AACD00F0272B /* Project object */;
 }

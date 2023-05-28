@@ -1,26 +1,22 @@
-//
-//  ContentView.swift
-//  AlertPopUp_Bug
-//
-//  Created by Michael on 5/28/23.
-//
-
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+  var body: some View {
+    NavigationStack {
+      TodoListView(
+        store: .init(
+          initialState: .init(todos: .mocks),
+          reducer: TodoListFeature()._printChanges()
+        )
+      )
+      .navigationTitle("Todos")
     }
+
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
