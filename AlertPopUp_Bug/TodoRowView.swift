@@ -48,11 +48,11 @@ struct TodoRowView: View {
   let store: StoreOf<TodoRowFeature>
   
   var body: some View {
-    WithViewStore(store, observe: { $0 }) { viewStore in
+    WithViewStore(store, observe: \.todo) { viewStore in
       HStack {
-        Text(viewStore.todo.title)
+        Text(viewStore.title)
         Spacer()
-        Image(systemName: viewStore.todo.isCompleted ? "checkmark.square" : "square")
+        Image(systemName: viewStore.isCompleted ? "checkmark.square" : "square")
       }
       .alert(store: store.scope(state: \.$alert, action: TodoRowFeature.Action.alert))
       .swipeActions(edge: .trailing, allowsFullSwipe: false) {
