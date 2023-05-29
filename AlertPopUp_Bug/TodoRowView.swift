@@ -6,33 +6,18 @@ struct TodoRowFeature: Reducer {
   struct State: Equatable, Identifiable {
     var id: TodoModel.ID { todo.id }
     var todo: TodoModel
-    @PresentationState var alert: AlertState<Action.Alert>?
   }
   
   enum Action: Equatable {
-    case alert(PresentationAction<Alert>)
     case deleteButtonTapped
-    
-    enum Alert: Equatable {
-      case confirmDeletion
-    }
   }
   
   var body: some ReducerOf<Self> {
-    Reduce { state, action in
-      switch action {
-      case .alert:
-        return .none
-        
-      case .deleteButtonTapped:
-        state.alert = .delete()
-        return .none
-      }
-    }
+    EmptyReducer()
   }
 }
 
-extension AlertState where Action == TodoRowFeature.Action.Alert {
+extension AlertState where Action == TodoListFeature.Action.Alert {
   static func delete() -> Self {
     .init {
       TextState("Delete Todo")
@@ -48,13 +33,12 @@ struct TodoRowView: View {
   let store: StoreOf<TodoRowFeature>
   
   var body: some View {
-    WithViewStore(store, observe: \.todo) { viewStore in
+		WithViewStore(store, observe: \.todo) { viewStore in
       HStack {
         Text(viewStore.title)
         Spacer()
         Image(systemName: viewStore.isCompleted ? "checkmark.square" : "square")
       }
-      .alert(store: store.scope(state: \.$alert, action: TodoRowFeature.Action.alert))
       .swipeActions(edge: .trailing, allowsFullSwipe: false) {
         Button(role: .destructive) {
           viewStore.send(.deleteButtonTapped)
